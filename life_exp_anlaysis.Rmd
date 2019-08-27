@@ -21,6 +21,9 @@ library(gapminder)
 library(tidyverse)
 ```
 
+We will first clean the data. 
+
+
 ```{r}
 gapminder %>%
   group_by(year) %>%
@@ -28,9 +31,7 @@ gapminder %>%
   select(country, lifeExp, year) %>%
   arrange(year) ->
   sumdat
-
 ```
 
-```{r}
-sumdat
-```
+
+We will now recreate the plot from Oeppen and Vaulpel(2002). 
