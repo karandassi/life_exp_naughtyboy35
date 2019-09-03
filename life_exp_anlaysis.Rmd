@@ -17,20 +17,22 @@ library(tidyverse)
 ```
 
 ```{r}
-library(gapminder)
-library(tidyverse)
+library(ggplot2)
+
 ```
 
 We will first clean the data. 
 
 
 ```{r}
-gapminder %>%
+gapminder_unfiltered %>%
   group_by(year) %>%
   filter(lifeExp == max(lifeExp)) %>%
   select(country, lifeExp, year) %>%
   arrange(year) ->
   sumdat
+
+sumdat
 ```
 
 
@@ -41,3 +43,15 @@ gapminder %>%
   filter(lifeExp > 28) %>%
   filter(year > 1958)
 ```
+
+Create a scatterplot of year verses max life expectancy:
+
+```{r}
+
+sumdat %>%
+  ggplot(aes(x = year, y = lifeExp)) +
+  geom_point( aes(color = country)) +
+  geom_smooth(method = "lm", se = F)
+
+```
+
