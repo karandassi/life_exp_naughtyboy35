@@ -38,5 +38,6 @@ We will now recreate the plot from Oeppen and Vaulpel(2002).
 
 ```{r}
 gapminder %>%
-  filter(lifeExp > 28)
+  filter(lifeExp > 28) %>%
+  filter(year > 1958)
 ```
