@@ -35,3 +35,8 @@ gapminder %>%
 
 
 We will now recreate the plot from Oeppen and Vaulpel(2002). 
+
+```{r}
+gapminder %>%
+  filter(lifeExp > 28)
+```
